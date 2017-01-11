@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Elm.playground">
+   </FileRef>
+   <FileRef
+      location = "group:../../github/RxSwift/Rx.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "container:Elm.xcodeproj">
+   </FileRef>
+</Workspace>
