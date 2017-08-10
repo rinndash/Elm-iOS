@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6909656F1E081A09002FB9C6 /* Elm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6909656E1E081A09002FB9C6 /* Elm.swift */; };
+		2EDFAAE91F3C9CCE00401870 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDFAAE81F3C9CCE00401870 /* ViewModel.swift */; };
+		2EDFAAEB1F3C9DE200401870 /* BeginnerProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDFAAEA1F3C9DE200401870 /* BeginnerProgram.swift */; };
+		2EDFAAEE1F3CA0DC00401870 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDFAAED1F3CA0DC00401870 /* Button.swift */; };
+		2EDFAAF01F3CA11B00401870 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDFAAEF1F3CA11B00401870 /* TextField.swift */; };
+		2EDFAAF21F3CA7BB00401870 /* LayoutKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EDFAAF11F3CA7BB00401870 /* LayoutKit.framework */; };
 		69AF70BC1E1F3BA500ACF6BA /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69BA93081E0805420062D9B4 /* RxCocoa.framework */; };
 		69BA92DA1E0802C00062D9B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA92D91E0802C00062D9B4 /* AppDelegate.swift */; };
 		69BA92DC1E0802C00062D9B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA92DB1E0802C00062D9B4 /* ViewController.swift */; };
@@ -18,8 +22,6 @@
 		69BA92FA1E0802C00062D9B4 /* ElmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA92F91E0802C00062D9B4 /* ElmUITests.swift */; };
 		69BA930C1E0805420062D9B4 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69BA93091E0805420062D9B4 /* RxSwift.framework */; };
 		69BA930D1E0805420062D9B4 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69BA930A1E0805420062D9B4 /* SnapKit.framework */; };
-		69BA93111E0806720062D9B4 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA93101E0806720062D9B4 /* App.swift */; };
-		69BA93151E080C1A0062D9B4 /* LeeGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69BA93141E080C1A0062D9B4 /* LeeGo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6909656E1E081A09002FB9C6 /* Elm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Elm.swift; sourceTree = "<group>"; };
+		2EDFAAE81F3C9CCE00401870 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		2EDFAAEA1F3C9DE200401870 /* BeginnerProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeginnerProgram.swift; sourceTree = "<group>"; };
+		2EDFAAED1F3CA0DC00401870 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		2EDFAAEF1F3CA11B00401870 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		2EDFAAF11F3CA7BB00401870 /* LayoutKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LayoutKit.framework; path = Carthage/Build/iOS/LayoutKit.framework; sourceTree = "<group>"; };
 		69BA92D61E0802C00062D9B4 /* Elm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BA92D91E0802C00062D9B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69BA92DB1E0802C00062D9B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,7 +63,6 @@
 		69BA93081E0805420062D9B4 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		69BA93091E0805420062D9B4 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		69BA930A1E0805420062D9B4 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
-		69BA93101E0806720062D9B4 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		69BA93121E080AD50062D9B4 /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		69BA93141E080C1A0062D9B4 /* LeeGo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LeeGo.framework; path = Carthage/Build/iOS/LeeGo.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,8 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EDFAAF21F3CA7BB00401870 /* LayoutKit.framework in Frameworks */,
 				69AF70BC1E1F3BA500ACF6BA /* RxCocoa.framework in Frameworks */,
-				69BA93151E080C1A0062D9B4 /* LeeGo.framework in Frameworks */,
 				69BA930C1E0805420062D9B4 /* RxSwift.framework in Frameworks */,
 				69BA930D1E0805420062D9B4 /* SnapKit.framework in Frameworks */,
 			);
@@ -91,6 +96,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2EDFAAEC1F3CA0D600401870 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				2EDFAAED1F3CA0DC00401870 /* Button.swift */,
+				2EDFAAEF1F3CA11B00401870 /* TextField.swift */,
+			);
+			name = Apps;
+			sourceTree = "<group>";
+		};
 		69BA92CD1E0802C00062D9B4 = {
 			isa = PBXGroup;
 			children = (
@@ -115,10 +129,11 @@
 		69BA92D81E0802C00062D9B4 /* Elm */ = {
 			isa = PBXGroup;
 			children = (
+				2EDFAAEC1F3CA0D600401870 /* Apps */,
 				69BA92D91E0802C00062D9B4 /* AppDelegate.swift */,
 				69BA92DB1E0802C00062D9B4 /* ViewController.swift */,
-				69BA93101E0806720062D9B4 /* App.swift */,
-				6909656E1E081A09002FB9C6 /* Elm.swift */,
+				2EDFAAE81F3C9CCE00401870 /* ViewModel.swift */,
+				2EDFAAEA1F3C9DE200401870 /* BeginnerProgram.swift */,
 				69BA92DD1E0802C00062D9B4 /* Main.storyboard */,
 				69BA92E01E0802C00062D9B4 /* Assets.xcassets */,
 				69BA92E21E0802C00062D9B4 /* LaunchScreen.storyboard */,
@@ -148,6 +163,7 @@
 		69BA93071E0805420062D9B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2EDFAAF11F3CA7BB00401870 /* LayoutKit.framework */,
 				69BA93141E080C1A0062D9B4 /* LeeGo.framework */,
 				69BA93121E080AD50062D9B4 /* Cartfile.resolved */,
 				69BA93081E0805420062D9B4 /* RxCocoa.framework */,
@@ -299,8 +315,8 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Snapkit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Leego.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/LayoutKit.framework",
 			);
 			outputPaths = (
 			);
@@ -315,9 +331,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69BA93111E0806720062D9B4 /* App.swift in Sources */,
+				2EDFAAEE1F3CA0DC00401870 /* Button.swift in Sources */,
+				2EDFAAE91F3C9CCE00401870 /* ViewModel.swift in Sources */,
+				2EDFAAEB1F3C9DE200401870 /* BeginnerProgram.swift in Sources */,
+				2EDFAAF01F3CA11B00401870 /* TextField.swift in Sources */,
 				69BA92DC1E0802C00062D9B4 /* ViewController.swift in Sources */,
-				6909656F1E081A09002FB9C6 /* Elm.swift in Sources */,
 				69BA92DA1E0802C00062D9B4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

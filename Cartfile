@@ -3,4 +3,4 @@ github "ReactiveX/RxSwift" ~> 3.0.1
 
 # Layout
 github "SnapKit/SnapKit" ~> 3.0.0
-github "wangshengjia/LeeGo" ~> 0.6.0
+github "linkedin/LayoutKit"
