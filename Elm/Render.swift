@@ -14,8 +14,13 @@ func render<Message>(_ viewTree: ViewModel<Message>, disposeBag: DisposeBag) -> 
     let messageChannel: PublishSubject<Message> = PublishSubject()
     
     switch viewTree {
-    case .label(let text):
-        return (LabelLayout(text: text), messageChannel)
+    case let .label(text, color):
+        return (LabelLayout(
+            text: text
+            , config: { (label: UILabel) in
+                label.textColor = color
+            }
+        ), messageChannel)
         
     case .button(let message, let title):
         return (ButtonLayout(
@@ -29,11 +34,11 @@ func render<Message>(_ viewTree: ViewModel<Message>, disposeBag: DisposeBag) -> 
                     .disposed(by: disposeBag)
         }), messageChannel)
 
-    case let .textField(placeholder, onTextChange):
+    case let .textField(placeholder, key, onTextChange):
         return (SizeLayout<UITextField>(
             width: 300
             , height: 100
-            , viewReuseId: "textfield"
+            , viewReuseId: key
             , config: { textField in
             textField.placeholder = placeholder
             textField.rx.value

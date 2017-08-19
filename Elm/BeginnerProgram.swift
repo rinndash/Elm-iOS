@@ -10,10 +10,6 @@ import UIKit
 import RxSwift
 import SnapKit
 
-protocol CopyableStruct {
-    
-}
-
 protocol BeginnerProgram {
     associatedtype Model
     associatedtype Message

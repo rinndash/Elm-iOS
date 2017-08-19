@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2E0A9EE31F4834D80088655D /* Render.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0A9EE21F4834D80088655D /* Render.swift */; };
+		2E0A9EE51F484B860088655D /* Forms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0A9EE41F484B860088655D /* Forms.swift */; };
+		2E0A9EE81F484C2D0088655D /* CopayableStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0A9EE71F484C2D0088655D /* CopayableStruct.swift */; };
 		2EDFAAE91F3C9CCE00401870 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDFAAE81F3C9CCE00401870 /* ViewModel.swift */; };
 		2EDFAAEB1F3C9DE200401870 /* BeginnerProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDFAAEA1F3C9DE200401870 /* BeginnerProgram.swift */; };
 		2EDFAAEE1F3CA0DC00401870 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDFAAED1F3CA0DC00401870 /* Button.swift */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		2E0A9EE21F4834D80088655D /* Render.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Render.swift; sourceTree = "<group>"; };
+		2E0A9EE41F484B860088655D /* Forms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forms.swift; sourceTree = "<group>"; };
+		2E0A9EE71F484C2D0088655D /* CopayableStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CopayableStruct.swift; sourceTree = "<group>"; };
 		2EDFAAE81F3C9CCE00401870 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		2EDFAAEA1F3C9DE200401870 /* BeginnerProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeginnerProgram.swift; sourceTree = "<group>"; };
 		2EDFAAED1F3CA0DC00401870 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 			children = (
 				2EDFAAED1F3CA0DC00401870 /* Button.swift */,
 				2EDFAAEF1F3CA11B00401870 /* TextField.swift */,
+				2E0A9EE41F484B860088655D /* Forms.swift */,
 			);
 			name = Apps;
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 				2EDFAAE81F3C9CCE00401870 /* ViewModel.swift */,
 				2E0A9EE21F4834D80088655D /* Render.swift */,
 				2EDFAAEA1F3C9DE200401870 /* BeginnerProgram.swift */,
+				2E0A9EE71F484C2D0088655D /* CopayableStruct.swift */,
 				69BA92DD1E0802C00062D9B4 /* Main.storyboard */,
 				69BA92E01E0802C00062D9B4 /* Assets.xcassets */,
 				69BA92E21E0802C00062D9B4 /* LaunchScreen.storyboard */,
@@ -339,8 +345,10 @@
 				2EDFAAE91F3C9CCE00401870 /* ViewModel.swift in Sources */,
 				2EDFAAEB1F3C9DE200401870 /* BeginnerProgram.swift in Sources */,
 				2EDFAAF01F3CA11B00401870 /* TextField.swift in Sources */,
+				2E0A9EE51F484B860088655D /* Forms.swift in Sources */,
 				69BA92DC1E0802C00062D9B4 /* ViewController.swift in Sources */,
 				69BA92DA1E0802C00062D9B4 /* AppDelegate.swift in Sources */,
+				2E0A9EE81F484C2D0088655D /* CopayableStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
