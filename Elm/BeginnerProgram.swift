@@ -35,24 +35,20 @@ extension BeginnerProgram {
 }
 
 fileprivate var mainDisposeBag = DisposeBag()
+fileprivate var viewMessageDisposeBag = DisposeBag()
 
 func run<Program>(program: Program, in viewController: UIViewController) where Program: BeginnerProgram {
     let proxy = PublishSubject<Program.Message>()
-    let sinks = program.main(sources: proxy)
+    let sinks = program.main(sources: proxy).debug()
     
     sinks
         .takeUntil(viewController.rx.deallocating)
-        .map(render)
-        .do(onNext: { (contentView, _) in
-            viewController.view.subviews.forEach { $0.removeFromSuperview() }
-            viewController.view.addSubview(contentView)
-            contentView.snp.makeConstraints { $0.center.equalToSuperview() }
-        })
-        .flatMapLatest { $0.1 }
-        .debug()
-        .do(onNext: {
-            print($0)
-        })
+        .flatMapLatest { viewModel -> Observable<Program.Message> in
+            viewMessageDisposeBag = DisposeBag()
+            let (layout, message$) = render(viewModel, disposeBag: viewMessageDisposeBag)
+            layout.arrangement().makeViews(in: viewController.view)
+            return message$
+        }
         .bind(to: proxy)
         .disposed(by: mainDisposeBag)
 }
