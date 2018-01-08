@@ -4,3 +4,4 @@ github "ReactiveX/RxSwift" ~> 4.1.0
 # Layout
 github "SnapKit/SnapKit" ~> 4.0.0
 github "linkedin/LayoutKit"
+github "tonyarnold/Differ" ~> 1.0.3
