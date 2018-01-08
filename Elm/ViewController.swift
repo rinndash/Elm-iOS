@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        run(program: Random(), in: self)
+        run(program: Button(), in: self)
             .disposed(by: disposeBag)
     }
 }

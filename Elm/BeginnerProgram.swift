@@ -30,18 +30,13 @@ extension BeginnerProgram {
     }
 }
 
-var mainDisposeBag = DisposeBag()
-fileprivate var viewMessageDisposeBag = DisposeBag()
-
-func run<Program>(program: Program, in viewController: UIViewController) where Program: BeginnerProgram {
+func run<Program>(program: Program, in viewController: UIViewController) -> Disposable where Program: BeginnerProgram {
     let proxy = PublishSubject<Program.Message>()
-    let sinks = program.main(sources: proxy).debug()
+    let viewModel$ = program.main(sources: proxy).debug()
     
-    sinks
-        .takeUntil(viewController.rx.deallocating)
+    return viewModel$
         .flatMapLatest { viewModel -> Observable<Program.Message> in
             return Observable.empty()
         }
         .bind(to: proxy)
-        .disposed(by: mainDisposeBag)
 }

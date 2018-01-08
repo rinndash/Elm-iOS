@@ -57,7 +57,6 @@ func run<T>(program: T, in viewController: UIViewController) -> Disposable where
     
     return sinks
         .flatMapLatest { viewModel -> Observable<T.Message> in
-            
             return Observable.empty()
         }
         .bind(to: proxy)
