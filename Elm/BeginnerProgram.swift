@@ -35,8 +35,18 @@ func run<Program>(program: Program, in viewController: UIViewController) -> Disp
     let viewModel$ = program.main(sources: proxy).debug()
     
     return viewModel$
-        .flatMapLatest { viewModel -> Observable<Program.Message> in
+        .zipWithPrevious(initial: ViewModel.none)
+        .flatMapLatest { (old, new) -> Observable<Program.Message> in
+            print("old", old)
+            print("new", new)
             return Observable.empty()
         }
         .bind(to: proxy)
 }
+
+extension ObservableType {
+    func zipWithPrevious(initial: E) -> Observable<(E, E)> {
+        return scan((initial, initial), accumulator: { ($0.1, $1) }).skip(1)
+    }
+}
+

@@ -27,9 +27,11 @@ struct TextField: BeginnerProgram {
     }
     
     func view(model: TextField.Model) -> ViewModel<TextField.Message> {
-        return stack([
-            textField(placeholder: "Text to reverse", onInput: Message.change)
-            , label(with: String(model.content.reversed()))
+        return stack(
+            identity: "stack",
+            [
+                textField(identity: "textField", placeholder: "Text to reverse", onInput: Message.change),
+                label(identity: "label", with: String(model.content.reversed()))
             ])
     }
 }

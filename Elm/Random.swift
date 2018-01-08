@@ -39,9 +39,11 @@ struct Random: Program {
     }
     
     func view(model: Model) -> ViewModel<Message> {
-        return stack([
-            label(with: model.dieFace.description),
-            button(onTap: Message.roll, "Roll")
+        return stack(
+            identity: "stack",
+            [
+                label(identity: "label", with: model.dieFace.description),
+                button(identity: "rollButton", onTap: Message.roll, "Roll")
             ])
     }
 }

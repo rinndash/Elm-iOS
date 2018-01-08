@@ -28,10 +28,12 @@ struct Button: BeginnerProgram {
     }
     
     func view(model: Model) -> ViewModel<Message> {
-        return stack([
-            button(onTap: .decrement, "-"),
-            label(with: model.description),
-            button(onTap: .increment, "+")
-            ])
+        return label(identity: "label", with: model.description)
+            
+//            stack([
+//            button(onTap: .decrement, "-"),
+//            label(with: model.description),
+//            button(onTap: .increment, "+")
+//            ])
     }
 }

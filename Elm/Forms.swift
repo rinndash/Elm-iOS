@@ -49,11 +49,13 @@ struct Forms: BeginnerProgram {
     }
     
     func view(model: Model) -> ViewModel<Message> {
-        return stack([
-            textField(placeholder: "Name", key:"nameTextField", onInput: Message.name)
-            , textField(placeholder: "Password", key:"passwordTextField", onInput: Message.password)
-            , textField(placeholder: "Re-enter Password", key:"passwordAgainTextField", onInput: Message.passwordAgain)
-            , viewValidation(model)
+        return stack(
+            identity: "stack",
+            [
+                textField(identity: "nameTextField", placeholder: "Name", key:"nameTextField", onInput: Message.name),
+                textField(identity: "passwordTextField", placeholder: "Password", key:"passwordTextField", onInput: Message.password),
+                textField(identity: "passwerdAgainTextField", placeholder: "Re-enter Password", key:"passwordAgainTextField", onInput: Message.passwordAgain),
+                viewValidation(model)
             ])
     }
     
@@ -61,6 +63,6 @@ struct Forms: BeginnerProgram {
         let arePasswordsMatch = model.password == model.passwordAgain
         let title = arePasswordsMatch ? "OK" : "Passwords do not match!"
         let color = arePasswordsMatch ? UIColor.green : UIColor.red
-        return label(with: title, color: color)
+        return label(identity: "validationLabel", with: title, color: color)
     }
 }
