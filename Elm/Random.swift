@@ -40,8 +40,8 @@ struct Random: Program {
     
     func view(model: Model) -> ViewModel<Message> {
         return stack([
-            label(with: model.dieFace.description)
-            , button(onTap: Message.roll, "Roll")
+            label(with: model.dieFace.description),
+            button(onTap: Message.roll, "Roll")
             ])
     }
 }

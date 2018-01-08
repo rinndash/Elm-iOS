@@ -6,17 +6,8 @@
 //  Copyright © 2017년 Riiid. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import RxSwift
-
-struct Command<MSG> {
-    let run: (() -> Any)?
-    let transform: ((Any) -> MSG)?
-    
-    static var none: Command<MSG> {
-        return Command(run: nil, transform: nil)
-    }
-}
 
 enum Subscription<MSG> {
     case none
@@ -32,13 +23,46 @@ protocol Program {
     func view(model: Model) -> ViewModel<Message>
 }
 
-//extension Program {
-//    func main(sources: Observable<Message>) -> Observable<ViewModel<Message>> {
-//        let initialModel: Model = model
-//        let model$ = sources
-//            .scan(initialModel, accumulator: update)
-//            .startWith(initialModel)
-//        let view$ = model$.map(view)
-//        return view$
-//    }
-//}
+extension Program {
+    func main(message$: Observable<Message>) -> Observable<Effect<Message>> {
+        let (initialModel, initialCommand) = initial
+        let model_effects = message$
+            .scan(initial) { model_effect, message -> (Model, Command<Message>) in
+                let (model, _) = model_effect
+                return self.update(model: model, with: message)
+            }
+            .share(replay: 1, scope: .forever)
+        
+        let model$ = model_effects.map { $0.0 }
+            .startWith(initialModel)
+        
+        let viewModel$ = model$
+            .map(view)
+            .map(Effect.view)
+        
+        let anotherEffect$ = model_effects.map { $0.1 }
+            .startWith(initialCommand)
+            .map(Effect.command)
+        
+        return Observable.merge([
+            viewModel$,
+            anotherEffect$
+            ])
+    }
+}
+
+func run<T>(program: T, in viewController: UIViewController) -> Disposable where T: Program {
+    let proxy = PublishSubject<T.Message>()
+    let sinks = program.main(message$: proxy).debug()
+    
+    return sinks
+        .flatMapLatest { viewModel -> Observable<T.Message> in
+            
+            return Observable.empty()
+        }
+        .bind(to: proxy)
+}
+
+
+
+

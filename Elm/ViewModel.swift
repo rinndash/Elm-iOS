@@ -10,25 +10,34 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-enum ViewModel<Message> {
-    case stack(subviewModels: [ViewModel<Message>])
-    case label(text: String, color: UIColor?)
-    case textField(placeholder: String, key: String?, onInput: (String) -> Message)
-    case button(onTap: Message, title: String)
+struct ViewModel<Message>: EffectType {
+    let message$: Observable<Message>
+    
+    init<View: UIView>(_ f: (View) -> Observable<Message>) {
+        message$ = Observable.empty()
+    }
 }
 
-func stack<T>(_ subviewModels: [ViewModel<T>]) -> ViewModel<T> {
-    return .stack(subviewModels: subviewModels)
+func stack<Message>(_ subviewModels: [ViewModel<Message>]) -> ViewModel<Message> {
+    return ViewModel { (stackView: UIStackView) -> Observable<Message> in
+        return Observable.empty()
+    }
 }
 
-func textField<T>(placeholder: String, key: String? = nil, onInput: @escaping (String) -> T) -> ViewModel<T> {
-    return .textField(placeholder: placeholder, key: key, onInput: onInput)
+func textField<Message>(placeholder: String, key: String? = nil, onInput: @escaping (String) -> Message) -> ViewModel<Message> {
+    return ViewModel { (stackView: UIStackView) -> Observable<Message> in
+        return Observable.empty()
+    }
 }
 
-func button<T>(onTap: T, _ title: String) -> ViewModel<T> {
-    return .button(onTap: onTap, title: title)
+func button<Message>(onTap: Message, _ title: String) -> ViewModel<Message> {
+    return ViewModel { (stackView: UIStackView) -> Observable<Message> in
+        return Observable.empty()
+    }
 }
 
-func label<T>(with text: String, color: UIColor? = nil) -> ViewModel<T> {
-    return .label(text: text, color: color)
+func label<Message>(with text: String, color: UIColor? = nil) -> ViewModel<Message> {
+    return ViewModel { (stackView: UIStackView) -> Observable<Message> in
+        return Observable.empty()
+    }
 }

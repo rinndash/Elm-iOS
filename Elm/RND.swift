@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol RandomGenerator {
     associatedtype Value
@@ -24,9 +25,13 @@ struct RND {
         return IntGenerator()
     }
     
-    static func generate<A, Message, Generator: RandomGenerator>(transform: @escaping (A) -> Message, generator: Generator) -> Command<Message> where Generator.Value == A {
-        let run: () -> Any = { generator.generate() }
-        let t: (Any) -> Message = { (x: Any) -> Message in transform(x as! A) }
-        return Command(run: run, transform: t)
+    static func generate<T, Message, Generator: RandomGenerator>(transform: @escaping (T) -> Message, generator: Generator) -> Command<Message> where Generator.Value == T {
+        let generate$ = Observable<T>.create { observer in
+            observer.onNext(generator.generate())
+            observer.onCompleted()
+            return Disposables.create()
+        }
+        
+        return Command(message$: generate$.map(transform))
     }
 }

@@ -30,7 +30,7 @@ extension BeginnerProgram {
     }
 }
 
-fileprivate var mainDisposeBag = DisposeBag()
+var mainDisposeBag = DisposeBag()
 fileprivate var viewMessageDisposeBag = DisposeBag()
 
 func run<Program>(program: Program, in viewController: UIViewController) where Program: BeginnerProgram {
@@ -40,10 +40,7 @@ func run<Program>(program: Program, in viewController: UIViewController) where P
     sinks
         .takeUntil(viewController.rx.deallocating)
         .flatMapLatest { viewModel -> Observable<Program.Message> in
-            viewMessageDisposeBag = DisposeBag()
-            let (layout, message$) = render(viewModel, disposeBag: viewMessageDisposeBag)
-            layout.arrangement().makeViews(in: viewController.view)
-            return message$
+            return Observable.empty()
         }
         .bind(to: proxy)
         .disposed(by: mainDisposeBag)
