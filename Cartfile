@@ -1,6 +1,6 @@
 # Rx
-github "ReactiveX/RxSwift" ~> 3.0.1
+github "ReactiveX/RxSwift" ~> 4.1.0
 
 # Layout
-github "SnapKit/SnapKit" ~> 3.0.0
+github "SnapKit/SnapKit" ~> 4.0.0
 github "linkedin/LayoutKit"
