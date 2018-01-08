@@ -37,6 +37,7 @@ func run<Program>(program: Program, in viewController: UIViewController) -> Disp
     return viewModel$
         .zipWithPrevious(initial: ViewModel.none)
         .flatMapLatest { (old, new) -> Observable<Program.Message> in
+            let view = viewController.view.viewWithTag(new.identity.hashValue)
             print("old", old)
             print("new", new)
             return Observable.empty()
